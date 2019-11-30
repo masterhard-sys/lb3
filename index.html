@@ -22,18 +22,120 @@
         <div class="main">
 
             <div class="block block_left">
-                <div class="item item1">Item1</div>
-                <div class="item item2">Item2</div>
-                <div class="item item3">Item3</div>
-                <div class="item item4">Item4</div>
-                <div class="item item5">Item5</div>
-                <div class="item item6">Item6</div>
-                <div class="item item7">Item7</div>
-                <div class="item item8">Item8</div>
+                <div class="item item1" id="Item1">Item1</div>
+                <div class="item item2" id="Item2">Item2</div>
+                <div class="item item3" id="Item3">Item3</div>
+                <div class="item item4" id="Item4">Item4</div>
+                <div class="item item5" id="Item5">Item5</div>
+                <div class="item item6" id="Item6">Item6</div>
+                <div class="item item7" id="Item7">Item7</div>
+                <div class="item item8">
+                    <p>
+                        (c)2019
+                    </p>
+                </div>
             </div>
-            <div class="block block_right"></div>
+            <div class="block block_right">
+                <div class="txt" id="txt">
+
+                    <div class="txt1" id="txt1"></div>
+                    <div class="txt2" id="txt2"></div>
+                    <div class="txt3" id="txt3"></div>
+                    <div class="txt4" id="txt4"></div>
+                    <div class="txt5" id="txt5"></div>
+                    <div class="txt6" id="txt6"></div>
+                    <div class="txt7" id="txt7"></div>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        let block1 = document.getElementById("Item1");
+        let block2 = document.getElementById("Item2");
+        let block3 = document.getElementById("Item3");
+        let block4 = document.getElementById("Item4");
+        let block5 = document.getElementById("Item5");
+        let block6 = document.getElementById("Item6");
+        let block7 = document.getElementById("Item7");
+        let txt1 = document.getElementById("txt1");
+        let txt2 = document.getElementById("txt2");
+        let txt3 = document.getElementById("txt3");
+        let txt4 = document.getElementById("txt4");
+        let txt5 = document.getElementById("txt5");
+        let txt6 = document.getElementById("txt6");
+        let txt7 = document.getElementById("txt7");
+        block1.addEventListener('click', function change() {
+            txt1.style.visibility = "visible";
+            txt2.style.visibility = "hidden";
+            txt3.style.visibility = "hidden";
+            txt4.style.visibility = "hidden";
+            txt5.style.visibility = "hidden";
+            txt6.style.visibility = "hidden";
+            txt7.style.visibility = "hidden";
+            block1.style.background = "blue";
+        });
+        block2.addEventListener('click', function change() {
+            txt1.style.visibility = "hidden";
+            txt2.style.visibility = "visible";
+
+            txt3.style.visibility = "hidden";
+            txt4.style.visibility = "hidden";
+            txt5.style.visibility = "hidden";
+            txt6.style.visibility = "hidden";
+            txt7.style.visibility = "hidden";
+            block2.style.background = "red";
+        });
+        block3.addEventListener('click', function change() {
+            txt1.style.visibility = "hidden";
+            txt2.style.visibility = "hidden";
+            txt3.style.visibility = "visible";
+            txt4.style.visibility = "hidden";
+            txt5.style.visibility = "hidden";
+            txt6.style.visibility = "hidden";
+            txt7.style.visibility = "hidden";
+            block3.style.background = "white";
+        });
+        block4.addEventListener('click', function change() {
+            txt1.style.visibility = "hidden";
+            txt2.style.visibility = "hidden";
+            txt3.style.visibility = "hidden";
+            txt4.style.visibility = "visible";
+            txt5.style.visibility = "hidden";
+            txt6.style.visibility = "hidden";
+            txt7.style.visibility = "hidden";
+            block4.style.background = "purple";
+        });
+        block5.addEventListener('click', function change() {
+            txt1.style.visibility = "hidden";
+            txt2.style.visibility = "hidden";
+            txt3.style.visibility = "hidden";
+            txt4.style.visibility = "hidden";
+            txt5.style.visibility = "visible";
+            txt6.style.visibility = "hidden";
+            txt7.style.visibility = "hidden";
+            block5.style.background = "violet";
+        });
+        block6.addEventListener('click', function change() {
+            txt1.style.visibility = "hidden";
+            txt2.style.visibility = "hidden";
+            txt3.style.visibility = "hidden";
+            txt4.style.visibility = "hidden";
+            txt5.style.visibility = "hidden";
+            txt6.style.visibility = "visible";
+            txt7.style.visibility = "hidden";
+            block6.style.background = "orange";
+        });
+        block7.addEventListener('click', function change() {
+            txt1.style.visibility = "hidden";
+            txt2.style.visibility = "hidden";
+            txt3.style.visibility = "hidden";
+            txt4.style.visibility = "hidden";
+            txt5.style.visibility = "hidden";
+            txt6.style.visibility = "hidden";
+            txt7.style.visibility = "visible";
+            block7.style.background = "orangered";
+        });
+    </script>
 </body>
 
 </html>

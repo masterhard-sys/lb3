@@ -35,17 +35,90 @@
         .item {
             background: green;
             height: 40px;
-            border: 4px dotted red;
+            /* border: 4px dotted red; */
+            text-align: center;
         }
         
         .item8 {
             flex: 1;
-            background: green;
+            background: rgb(71, 71, 71);
             height: 40px;
-            border: 4px dotted red;
+            /* border: 4px dotted red; */
+            position: relative;
+        }
+        
+        .item8>p {
+            position: absolute;
+            bottom: 0;
+            left: 35%;
         }
         
         .block_right {
+            height: 100%;
             flex: 9;
+            /* background: red; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .txt {
+            height: 100%;
+            position: relative;
+        }
+        
+        .txt1 {
+            height: 100%;
+            width: 100%;
+            background: blue;
+            position: absolute;
+            visibility: hidden;
+        }
+        
+        .txt2 {
+            height: 100%;
+            width: 100%;
             background: red;
+            position: absolute;
+            visibility: hidden;
+        }
+        
+        .txt3 {
+            height: 100%;
+            width: 100%;
+            background: white;
+            position: absolute;
+            visibility: hidden;
+        }
+        
+        .txt4 {
+            height: 100%;
+            width: 100%;
+            background: purple;
+            position: absolute;
+            visibility: hidden;
+        }
+        
+        .txt5 {
+            height: 100%;
+            width: 100%;
+            background: violet;
+            position: absolute;
+            visibility: hidden;
+        }
+        
+        .txt6 {
+            height: 100%;
+            width: 100%;
+            background: orange;
+            position: absolute;
+            visibility: hidden;
+        }
+        
+        .txt7 {
+            height: 100%;
+            width: 100%;
+            background: orangered;
+            position: absolute;
+            visibility: hidden;
         }
