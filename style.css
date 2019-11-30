@@ -19,7 +19,7 @@
         
         .main {
             display: flex;
-            border: 4px dotted green;
+            /* border: 4px dotted green; */
             height: 85%;
         }
         
@@ -33,15 +33,16 @@
         }
         
         .item {
-            background: green;
-            height: 40px;
+            background: rgb(128, 0, 0);
+            height: 10%;
             /* border: 4px dotted red; */
             text-align: center;
+            border: 4px double black;
         }
         
         .item8 {
             flex: 1;
-            background: rgb(71, 71, 71);
+            background: rgb(150, 150, 150);
             height: 40px;
             /* border: 4px dotted red; */
             position: relative;
@@ -65,12 +66,13 @@
         .txt {
             height: 100%;
             position: relative;
+            text-align: center;
         }
         
         .txt1 {
             height: 100%;
             width: 100%;
-            background: blue;
+            background: rgb(46, 0, 0);
             position: absolute;
             visibility: hidden;
         }
@@ -78,7 +80,7 @@
         .txt2 {
             height: 100%;
             width: 100%;
-            background: red;
+            background: rgb(46, 0, 0);
             position: absolute;
             visibility: hidden;
         }
@@ -86,7 +88,7 @@
         .txt3 {
             height: 100%;
             width: 100%;
-            background: white;
+            background: rgb(46, 0, 0);
             position: absolute;
             visibility: hidden;
         }
@@ -94,7 +96,7 @@
         .txt4 {
             height: 100%;
             width: 100%;
-            background: purple;
+            background: rgb(46, 0, 0);
             position: absolute;
             visibility: hidden;
         }
@@ -102,7 +104,7 @@
         .txt5 {
             height: 100%;
             width: 100%;
-            background: violet;
+            background: rgb(46, 0, 0);
             position: absolute;
             visibility: hidden;
         }
@@ -110,7 +112,7 @@
         .txt6 {
             height: 100%;
             width: 100%;
-            background: orange;
+            background: rgb(46, 0, 0);
             position: absolute;
             visibility: hidden;
         }
@@ -118,7 +120,51 @@
         .txt7 {
             height: 100%;
             width: 100%;
-            background: orangered;
+            background: rgb(46, 0, 0);
             position: absolute;
             visibility: hidden;
+        }
+        
+        @media only screen and (max-width: 1000px) {
+            .wrapper {
+                height: 700px;
+                width: 600px;
+            }
+        }
+        
+        @media only screen and (max-width: 800px) {
+            .wrapper {
+                height: 600px;
+                width: 500px;
+            }
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .wrapper {
+                height: 500px;
+                width: 400px;
+            }
+            .header_text {
+                font-size: 20px;
+            }
+        }
+        
+        @media only screen and (max-width: 450px) {
+            .wrapper {
+                height: 400px;
+                width: 300px;
+            }
+            .header_text {
+                font-size: 15px;
+            }
+            .txt {
+                font-size: 10px;
+            }
+        }
+        
+        @media only screen and (max-width: 330px) {
+            .wrapper {
+                height: 300px;
+                width: 200px;
+            }
         }
