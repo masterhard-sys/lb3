@@ -1,0 +1,51 @@
+        body {
+            color: white;
+        }
+        
+        .wrapper {
+            height: 700px;
+            width: 800px;
+            background: #000;
+            margin: auto;
+        }
+        
+        header {
+            font-size: 30px;
+            display: flex;
+            justify-content: space-around;
+            background: rgb(90, 90, 90);
+            height: 15%;
+        }
+        
+        .main {
+            display: flex;
+            border: 4px dotted green;
+            height: 85%;
+        }
+        
+        .block_left {
+            height: 100%;
+            background: rgb(43, 36, 36);
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        
+        .item {
+            background: green;
+            height: 40px;
+            border: 4px dotted red;
+        }
+        
+        .item8 {
+            flex: 1;
+            background: green;
+            height: 40px;
+            border: 4px dotted red;
+        }
+        
+        .block_right {
+            flex: 9;
+            background: red;
+        }
