@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jQuery.com/jQuery-latest.js" type="text/javascript"></script>
     <link rel="stylesheet" href="style.css">
+
     <title>3LB</title>
 </head>
 
@@ -61,149 +63,184 @@
                     </div>
                 </div>
             </div>
+            <div class="muz">
+                <audio src="The Chordette - Mr. Sandman.mp3" controls id="audioPlayer">
+                        Sorry, your browser doesn't support html5!
+                    </audio>
+                <ul id="playlist">
+                    <li class="current-song"><a href="The Chordette - Mr. Sandman.mp3">Mr.Sandman</a></li>
+                    <li><a href="Severe%20Tire%20Damage.mp3">Severe Tire Damage</a></li>
+                    <li><a href="Broken%20Reality.mp3">Broken Reality</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="muz">
+        <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+        <script src="audioPlayer.js"></script>
+        <script>
+            // loads the audio player
+            audioPlayer();
+        </script>
 
-            <audio controls src="The Chordette - Mr. Sandman.mp3">
-                                <source src="audio/music.mp3" type="audio/mpeg">
-                            </audio>
-        </div>
-    </div>
+        <script>
+            function audioPlayer() {
+                var currentSong = 0;
+                $("#audioPlayer")[0].src = $("#playlist li a")[0];
+                $("#audioPlayer")[0].play();
+                $("#playlist li a").click(function(e) {
+                    e.preventDefault();
+                    $("#audioPlayer")[0].src = this;
+                    $("#audioPlayer")[0].play();
+                    $("#playlist li").removeClass("current-song");
+                    currentSong = $(this).parent().index();
+                    $(this).parent().addClass("current-song");
+                });
 
-    <script>
-        let block1 = document.getElementById("Item1");
-        let block2 = document.getElementById("Item2");
-        let block3 = document.getElementById("Item3");
-        let block4 = document.getElementById("Item4");
-        let block5 = document.getElementById("Item5");
-        let block6 = document.getElementById("Item6");
-        let block7 = document.getElementById("Item7");
-        let txt1 = document.getElementById("txt1");
-        let txt2 = document.getElementById("txt2");
-        let txt3 = document.getElementById("txt3");
-        let txt4 = document.getElementById("txt4");
-        let txt5 = document.getElementById("txt5");
-        let txt6 = document.getElementById("txt6");
-        let txt7 = document.getElementById("txt7");
-        block1.addEventListener('click', function change() {
-            txt1.style.visibility = "visible";
-            txt2.style.visibility = "hidden";
-            txt3.style.visibility = "hidden";
-            txt4.style.visibility = "hidden";
-            txt5.style.visibility = "hidden";
-            txt6.style.visibility = "hidden";
-            txt7.style.visibility = "hidden";
-            block1.style.background = "rgb(46, 0, 0)";
-            block2.style.background = "rgb(128, 0, 0)";
-            block3.style.background = "rgb(128, 0, 0)";
-            block4.style.background = "rgb(128, 0, 0)";
-            block5.style.background = "rgb(128, 0, 0)";
-            block6.style.background = "rgb(128, 0, 0)";
-            block7.style.background = "rgb(128, 0, 0)";
-        });
-        block2.addEventListener('click', function change() {
-            block1.style.background = "rgb(128, 0, 0)";
-            block2.style.background = "rgb(46, 0, 0)";
-            block3.style.background = "rgb(128, 0, 0)";
-            block4.style.background = "rgb(128, 0, 0)";
-            block5.style.background = "rgb(128, 0, 0)";
-            block6.style.background = "rgb(128, 0, 0)";
-            block7.style.background = "rgb(128, 0, 0)";
-            txt1.style.visibility = "hidden";
-            txt2.style.visibility = "visible";
+                $("#audioPlayer")[0].addEventListener("ended", function() {
+                    currentSong++;
+                    if (currentSong == $("#playlist li a").length)
+                        currentSong = 0;
+                    $("#playlist li").removeClass("current-song");
+                    $("#playlist li:eq(" + currentSong + ")").addClass("current-song");
+                    $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
+                    $("#audioPlayer")[0].play();
+                });
+            }
+        </script>
 
-            txt3.style.visibility = "hidden";
-            txt4.style.visibility = "hidden";
-            txt5.style.visibility = "hidden";
-            txt6.style.visibility = "hidden";
-            txt7.style.visibility = "hidden";
-        });
-        block3.addEventListener('click', function change() {
-            block1.style.background = "rgb(128, 0, 0)";
-            block2.style.background = "rgb(128, 0, 0)";
-            block3.style.background = "rgb(46, 0, 0)";
-            block4.style.background = "rgb(128, 0, 0)";
-            block5.style.background = "rgb(128, 0, 0)";
-            block6.style.background = "rgb(128, 0, 0)";
-            block7.style.background = "rgb(128, 0, 0)";
-            txt1.style.visibility = "hidden";
-            txt2.style.visibility = "hidden";
-            txt3.style.visibility = "visible";
-            txt4.style.visibility = "hidden";
-            txt5.style.visibility = "hidden";
-            txt6.style.visibility = "hidden";
-            txt7.style.visibility = "hidden";
+        <script>
+            let block1 = document.getElementById("Item1");
+            let block2 = document.getElementById("Item2");
+            let block3 = document.getElementById("Item3");
+            let block4 = document.getElementById("Item4");
+            let block5 = document.getElementById("Item5");
+            let block6 = document.getElementById("Item6");
+            let block7 = document.getElementById("Item7");
+            let txt1 = document.getElementById("txt1");
+            let txt2 = document.getElementById("txt2");
+            let txt3 = document.getElementById("txt3");
+            let txt4 = document.getElementById("txt4");
+            let txt5 = document.getElementById("txt5");
+            let txt6 = document.getElementById("txt6");
+            let txt7 = document.getElementById("txt7");
+            block1.addEventListener('click', function change() {
+                txt1.style.visibility = "visible";
+                txt2.style.visibility = "hidden";
+                txt3.style.visibility = "hidden";
+                txt4.style.visibility = "hidden";
+                txt5.style.visibility = "hidden";
+                txt6.style.visibility = "hidden";
+                txt7.style.visibility = "hidden";
+                block1.style.background = "rgb(46, 0, 0)";
+                block2.style.background = "rgb(128, 0, 0)";
+                block3.style.background = "rgb(128, 0, 0)";
+                block4.style.background = "rgb(128, 0, 0)";
+                block5.style.background = "rgb(128, 0, 0)";
+                block6.style.background = "rgb(128, 0, 0)";
+                block7.style.background = "rgb(128, 0, 0)";
+            });
+            block2.addEventListener('click', function change() {
+                block1.style.background = "rgb(128, 0, 0)";
+                block2.style.background = "rgb(46, 0, 0)";
+                block3.style.background = "rgb(128, 0, 0)";
+                block4.style.background = "rgb(128, 0, 0)";
+                block5.style.background = "rgb(128, 0, 0)";
+                block6.style.background = "rgb(128, 0, 0)";
+                block7.style.background = "rgb(128, 0, 0)";
+                txt1.style.visibility = "hidden";
+                txt2.style.visibility = "visible";
 
-        });
-        block4.addEventListener('click', function change() {
-            block1.style.background = "rgb(128, 0, 0)";
-            block2.style.background = "rgb(128, 0, 0)";
-            block3.style.background = "rgb(128, 0, 0)";
-            block4.style.background = "rgb(46, 0, 0)";
-            block5.style.background = "rgb(128, 0, 0)";
-            block6.style.background = "rgb(128, 0, 0)";
-            block7.style.background = "rgb(128, 0, 0)";
-            txt1.style.visibility = "hidden";
-            txt2.style.visibility = "hidden";
-            txt3.style.visibility = "hidden";
-            txt4.style.visibility = "visible";
-            txt5.style.visibility = "hidden";
-            txt6.style.visibility = "hidden";
-            txt7.style.visibility = "hidden";
+                txt3.style.visibility = "hidden";
+                txt4.style.visibility = "hidden";
+                txt5.style.visibility = "hidden";
+                txt6.style.visibility = "hidden";
+                txt7.style.visibility = "hidden";
+            });
+            block3.addEventListener('click', function change() {
+                block1.style.background = "rgb(128, 0, 0)";
+                block2.style.background = "rgb(128, 0, 0)";
+                block3.style.background = "rgb(46, 0, 0)";
+                block4.style.background = "rgb(128, 0, 0)";
+                block5.style.background = "rgb(128, 0, 0)";
+                block6.style.background = "rgb(128, 0, 0)";
+                block7.style.background = "rgb(128, 0, 0)";
+                txt1.style.visibility = "hidden";
+                txt2.style.visibility = "hidden";
+                txt3.style.visibility = "visible";
+                txt4.style.visibility = "hidden";
+                txt5.style.visibility = "hidden";
+                txt6.style.visibility = "hidden";
+                txt7.style.visibility = "hidden";
 
-        });
-        block5.addEventListener('click', function change() {
-            block1.style.background = "rgb(128, 0, 0)";
-            block2.style.background = "rgb(128, 0, 0)";
-            block3.style.background = "rgb(128, 0, 0)";
-            block4.style.background = "rgb(128, 0, 0)";
-            block5.style.background = "rgb(46, 0, 0)";
-            block6.style.background = "rgb(128, 0, 0)";
-            block7.style.background = "rgb(128, 0, 0)";
-            txt1.style.visibility = "hidden";
-            txt2.style.visibility = "hidden";
-            txt3.style.visibility = "hidden";
-            txt4.style.visibility = "hidden";
-            txt5.style.visibility = "visible";
-            txt6.style.visibility = "hidden";
-            txt7.style.visibility = "hidden";
+            });
+            block4.addEventListener('click', function change() {
+                block1.style.background = "rgb(128, 0, 0)";
+                block2.style.background = "rgb(128, 0, 0)";
+                block3.style.background = "rgb(128, 0, 0)";
+                block4.style.background = "rgb(46, 0, 0)";
+                block5.style.background = "rgb(128, 0, 0)";
+                block6.style.background = "rgb(128, 0, 0)";
+                block7.style.background = "rgb(128, 0, 0)";
+                txt1.style.visibility = "hidden";
+                txt2.style.visibility = "hidden";
+                txt3.style.visibility = "hidden";
+                txt4.style.visibility = "visible";
+                txt5.style.visibility = "hidden";
+                txt6.style.visibility = "hidden";
+                txt7.style.visibility = "hidden";
 
-        });
-        block6.addEventListener('click', function change() {
-            block1.style.background = "rgb(128, 0, 0)";
-            block2.style.background = "rgb(128, 0, 0)";
-            block3.style.background = "rgb(128, 0, 0)";
-            block6.style.background = "rgb(128, 0, 0)";
-            block5.style.background = "rgb(128, 0, 0)";
-            block6.style.background = "rgb(46, 0, 0)";
-            block7.style.background = "rgb(128, 0, 0)";
-            txt1.style.visibility = "hidden";
-            txt2.style.visibility = "hidden";
-            txt3.style.visibility = "hidden";
-            txt4.style.visibility = "hidden";
-            txt5.style.visibility = "hidden";
-            txt6.style.visibility = "visible";
-            txt7.style.visibility = "hidden";
+            });
+            block5.addEventListener('click', function change() {
+                block1.style.background = "rgb(128, 0, 0)";
+                block2.style.background = "rgb(128, 0, 0)";
+                block3.style.background = "rgb(128, 0, 0)";
+                block4.style.background = "rgb(128, 0, 0)";
+                block5.style.background = "rgb(46, 0, 0)";
+                block6.style.background = "rgb(128, 0, 0)";
+                block7.style.background = "rgb(128, 0, 0)";
+                txt1.style.visibility = "hidden";
+                txt2.style.visibility = "hidden";
+                txt3.style.visibility = "hidden";
+                txt4.style.visibility = "hidden";
+                txt5.style.visibility = "visible";
+                txt6.style.visibility = "hidden";
+                txt7.style.visibility = "hidden";
 
-        });
-        block7.addEventListener('click', function change() {
-            block1.style.background = "rgb(128, 0, 0)";
-            block2.style.background = "rgb(128, 0, 0)";
-            block3.style.background = "rgb(128, 0, 0)";
-            block6.style.background = "rgb(128, 0, 0)";
-            block5.style.background = "rgb(128, 0, 0)";
-            block6.style.background = "rgb(128, 0, 0)";
-            block7.style.background = "rgb(46, 0, 0)";
-            txt1.style.visibility = "hidden";
-            txt2.style.visibility = "hidden";
-            txt3.style.visibility = "hidden";
-            txt4.style.visibility = "hidden";
-            txt5.style.visibility = "hidden";
-            txt6.style.visibility = "hidden";
-            txt7.style.visibility = "visible";
+            });
+            block6.addEventListener('click', function change() {
+                block1.style.background = "rgb(128, 0, 0)";
+                block2.style.background = "rgb(128, 0, 0)";
+                block3.style.background = "rgb(128, 0, 0)";
+                block6.style.background = "rgb(128, 0, 0)";
+                block5.style.background = "rgb(128, 0, 0)";
+                block6.style.background = "rgb(46, 0, 0)";
+                block7.style.background = "rgb(128, 0, 0)";
+                txt1.style.visibility = "hidden";
+                txt2.style.visibility = "hidden";
+                txt3.style.visibility = "hidden";
+                txt4.style.visibility = "hidden";
+                txt5.style.visibility = "hidden";
+                txt6.style.visibility = "visible";
+                txt7.style.visibility = "hidden";
 
-        });
-    </script>
+            });
+            block7.addEventListener('click', function change() {
+                block1.style.background = "rgb(128, 0, 0)";
+                block2.style.background = "rgb(128, 0, 0)";
+                block3.style.background = "rgb(128, 0, 0)";
+                block6.style.background = "rgb(128, 0, 0)";
+                block5.style.background = "rgb(128, 0, 0)";
+                block6.style.background = "rgb(128, 0, 0)";
+                block7.style.background = "rgb(46, 0, 0)";
+                txt1.style.visibility = "hidden";
+                txt2.style.visibility = "hidden";
+                txt3.style.visibility = "hidden";
+                txt4.style.visibility = "hidden";
+                txt5.style.visibility = "hidden";
+                txt6.style.visibility = "hidden";
+                txt7.style.visibility = "visible";
+
+            });
+        </script>
 </body>
 
 </html>
