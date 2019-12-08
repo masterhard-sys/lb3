@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="http://code.jQuery.com/jQuery-latest.js" type="text/javascript"></script>
     <link rel="stylesheet" href="style.css">
 
     <title>3LB</title>
@@ -63,24 +62,27 @@
                     </div>
                 </div>
             </div>
-            <div class="muz">
-                <audio src="The Chordette - Mr. Sandman.mp3" controls id="audioPlayer">
-                        Sorry, your browser doesn't support html5!
-                    </audio>
-                <ul id="playlist">
-                    <li class="current-song"><a href="The Chordette - Mr. Sandman.mp3">Mr.Sandman</a></li>
-                    <li><a href="Severe%20Tire%20Damage.mp3">Severe Tire Damage</a></li>
-                    <li><a href="Broken%20Reality.mp3">Broken Reality</a></li>
-                </ul>
-            </div>
-        </div>
-        <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-        <script src="audioPlayer.js"></script>
-        <script>
-            // loads the audio player
-            audioPlayer();
-        </script>
 
+
+        </div>
+        <div class="muz">
+
+            <audio src="" controls id="audioPlayer">
+                Sorry, your browser doesn't support html5!
+            </audio>
+            <ul id="playlist">
+                <li class="current-song"><a href="Exit%20the%20Premises.mp3">Exit the Premises</a></li>
+                <li><a href="Severe%20Tire%20Damage.mp3">Severe Tire Damage</a></li>
+                <li><a href="Broken%20Reality.mp3">Broken Reality</a></li>
+            </ul>
+            <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+            <script src="audioPlayer.js"></script>
+            <script>
+                // loads the audio player
+                audioPlayer();
+            </script>
+
+        </div>
         <script>
             function audioPlayer() {
                 var currentSong = 0;
@@ -106,6 +108,13 @@
                 });
             }
         </script>
+        <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+        <script src="audioPlayer.js"></script>
+        <script>
+            // loads the audio player
+            audioPlayer();
+        </script>
+
 
         <script>
             let block1 = document.getElementById("Item1");

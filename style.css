@@ -176,6 +176,7 @@
         
         #playlist {
             list-style: none;
+            background-color: darkred;
         }
         
         #playlist li a {
